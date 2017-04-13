@@ -1,0 +1,194 @@
+
+.header, .day-number{
+    text-align: center;
+    color: #fff;
+}
+.clearfix:after {
+        visibility: hidden;
+        display: block;
+        content: "";
+        clear: both;
+        height: 0;
+}
+.day-number{
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+.day-number>*{
+    display: inline-block;
+}
+.square-rot{
+    cursor: pointer;
+    border: 1px solid #333;
+    z-index: 2;
+    margin: 5px;
+    width: 30px;
+    height:30px;
+    background-color: #fff;
+    position:relative;
+    box-shadow: 3px 5px 6px -1px rgba(0,0,0,0.75);
+}
+.square-rot span{
+    position: absolute;
+    top: 0;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    line-height: 30px;
+    margin: 0 auto;
+
+}
+.square-rot:after{
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    top: -4px;
+    right: -4px;
+    border-top: 1px solid #5a5959;
+    border-right: 1px solid #5a5959;
+    background: transparent;
+}
+.square-rot:hover{
+    border: 1px solid #b4b4b4;
+}
+.wrap-cell{
+    float: left;
+    color: #878686;
+}
+.text-center{
+    text-align: center;
+}
+.list-records{
+    padding: 20px 0;
+}
+.wrap-cell:nth-child(7n+1){
+    clear: both;
+}
+/*styles*/
+.isnotes:before{
+    content: "*";
+    position: absolute;
+    color: #99a296;
+    top: -7px;
+    right: 0;
+    display: none;
+}
+.display:before{
+    display: block;
+}
+.isworkday{
+    background-color: #29373d;
+}
+.isdayoff{
+    background-color: #5a3a35;
+}
+.todayday{
+    background-color: rgba(3, 138, 233, 0.55);
+}
+.active{
+    border: 1px solid #fff03c;  
+}
+.active_red{
+    background-color: red;
+}
+.dayDescription{
+     display: none;
+}
+.visibleElement{
+    display: block;
+}
+.white{
+    color: #fff;
+}
+/*styles*/
+/*notes*/
+
+.note:hover .fa-trash, .note:hover .edit{
+    opacity: 1;
+}
+.edit:hover, .fa-trash:hover{
+    color: #b4b4b4;
+    cursor: pointer;
+}
+.fa-trash{
+    position: absolute;
+    opacity: 0;
+    bottom: 5px;
+    right: 0;
+}
+.edit{
+    position: absolute;
+    bottom: 5px;
+    right: 22px;
+    opacity: 0;
+}
+.fa{
+    color: #71ad5d;
+}
+.note__time{
+    font-size: 12px;
+    margin: 0px 0 10px 0;
+    font-style: italic;
+     color: #878686;
+}
+.note__number{
+    margin: 0 10px 0 0;
+    color: #71ad5d;
+}
+.note__text{
+    word-break: break-all;
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+.note__textEdit{
+    display: none;
+    z-index: 5;
+    width: 220px;
+    margin: 10px auto;
+    padding: 5px;
+    background: transparent;
+    color: #fff;
+    box-shadow: 3px 5px 6px -1px rgba(0,0,0,0.75);
+}
+.note__text:focus{
+    outline: none;
+}
+
+.note{
+    border-bottom: 2px solid #71ad5d;
+    max-width: 320px;
+    text-align: left;
+    margin: 0 auto 15px;;
+    padding: 5px 0;
+    position: relative;
+}
+.list-records{
+    position: relative;
+}
+
+/*notes*/
+.btn{
+    background-color: rgba(3, 138, 233, 0.55);
+    border: none;
+    width: 50px;
+    height: 30px;
+    color: #fff;
+    box-shadow: 3px 5px 6px -1px rgba(0,0,0,0.75);
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.input{
+    padding: 5px;
+    background: transparent;
+    color: #fff;
+    box-shadow: 3px 5px 6px -1px rgba(0,0,0,0.75);
+}
+.input_time{
+    width: 70px;
+}
+.btn:hover{
+    border: 1px solid #b4b4b4;
+}

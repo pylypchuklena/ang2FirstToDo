@@ -1,0 +1,36 @@
+<div>
+  <h1 class="header">
+    {{title}}
+  </h1>
+  <div class="day-number clearfix">
+    <div class="text-center">
+      <div class="wrap-cell" *ngFor="let item of week">
+        <div [ngClass]="{
+          isdayoff : item.dayOff === true, 
+          white : item.presentMonth === true, 
+          active : item.isSelected === true, 
+          todayday : item.todayDay === true}" class="isworkday square-rot" (click)="weekChange(item)">
+          <span>{{item.dateNumber}}</span><span class="isnotes" [ngClass]='{ display: item.hasNotes ==true }'></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=" dayDescription" [ngClass]="{visibleElement : isDaySelected===true}">
+    <div class="text-center list-records">
+      <form (ngSubmit)="selectedDay.onSubmit()">
+        <input [(ngModel)]="selectedDay.noteLine" type="text" name="Task" class="input" >
+        <input  [(ngModel)]="selectedDay.noteTime" [ngModelOptions]="{standalone: true}" class="input input_time" type="text" [textMask]="{mask: mask}" placeholder="HH:MM" />
+        <button type="submit" class="btn">add</button>
+         
+      </form>
+    </div>
+    <div class="note" *ngFor="let item of selectedDay.list; let serial=index">
+        <p class="note__time">{{item.displayTime}}</p> 
+        <span class="note__number">{{serial + 1}}</span>  
+        <!--<span class="note__time" >{{item.displayTime}}</span>-->
+        <span class="note__btn fa fa-trash" (click)="selectedDay.delete(item)" ></span>
+       <input class=" note__text" [value]="selectedItemText" (keypress)="updateHero($event)" value="{{item.displayNode}}"/>
+    </div>
+     
+  </div>
+</div>
